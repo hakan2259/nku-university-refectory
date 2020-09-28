@@ -1,0 +1,21 @@
+<?php
+define("_REFECTORY", "YEMEKHANE");
+define("_LOGIN", "GİRİŞ");
+define("_WELCOME","Namık Kemal Üniversitesi Yemekhanesine Hoşgeldiniz");
+define("_WELCOMELOGINTEXT","Rezervesyon yapmak için lütfen giriş yapınız");
+define("_BANNERLOGIN","Giriş");
+define("_AUTOMATION","Otomasyon Kullanım Videosu");
+define("_REFECTORYINFO","Yemekhane Otomasyonu İle İlgili Önemli Bilgiler");
+define("_REFECTORYADMİNDİRECTORATE","Yemekhane İdare Müdürlüğü");
+define("_ADDRESS","Adres");
+define("_EMAIL","E-Posta");
+define("_PHONE","Telefon");
+define("_FAX","Faks");
+define("_COPYRIGHT","Telif Hakkı");
+define("_ALLRIGHTS","Tüm Hakları Saklıdır");
+define("_RESERVATION","REZERVASYON");
+define("_LUNCH","Öğle");
+define("_DINNER","Akşam Yemeği");
+define("_CHOOSEREFECTORY","Yemekhane Seçiniz");
+define("_BASKET","SEPET");
+define("_LOGOUT","ÇIKIŞ");

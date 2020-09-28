@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+    php:
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        ports: 
+            - 80:80
+        volumes: 
+            - .:/var/www/html
+          
+    db:
+        image: mariadb:10.4.14
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: university_refectory
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: admin
+        volumes: 
+            - ./backup:/docker-entrypoint-initdb.d
+            
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - 8080:8080
+

@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yemekhane | Namık Kemal Üniversitesi</title>
+
+    <meta name="description" content="Namık Kemal Üniversitesi Yemekhane Otomasyonu. Üniversitemizin Personel veya Öğrencilerin Yemek Rezervasyon Yapabilecekleri Sistemdir.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      "/>
+    <meta name="keywords" content="                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                namık kemal, üniversitesi, tekirdağ, yemekhane, refectory, namık kemal university, yemek                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               "/>
+    <meta name="author" content="Hakan SANDAL"/>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="http://localhost/university_refectory/views/assets/css/style.php" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="http://localhost/university_refectory/views/assets/css/slick.css"/>
+
+
+    <link rel="icon" href="http://localhost/university_refectory/views/assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+    <style>
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+    </style>
+
+
+
+
+
+</head>
+
+<body>
+
+
+<header>
+
+    <nav class="navbar navbar-color fixed-top navbar-expand-lg text-white">
+
+
+        <a href="http://localhost/university_refectory" class="navbar-brand"><span><img
+                        src="http://localhost/university_refectory/views/assets/img/Namık Kemal Üniversitesi.png" width="250px" height="50px"></span><span
+                    class="refectory-text">YEMEKHANE</span></a>
+        <div>
+            <span class="btn-refectory-top">REFECTORY</span>
+
+            <button type="button" class="navbar-toggler btn-icon" data-toggle="collapse" data-target="#navbar-nku"
+                    aria-controls="navbar-nku">
+
+                <div><img src="http://localhost/university_refectory/views/assets/img/NKULogoBeyaz.png" class="btn-icon-img"></div>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-nku">
+            <ul class="navbar-nav ml-auto">
+
+
+                
+                    <li class="nav-item dropdown" style="cursor:pointer">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            <span>HAKAN</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-default"
+                             aria-labelledby="navbarDropdownMenuLink-333">
+                            <a href="http://localhost/university_refectory/user/reservation" class="dropdown-item">REZERVASYON</a>
+                            <a href="http://localhost/university_refectory/user/basket" class="dropdown-item">SEPET                                <span class="ml-2 badge badge-info" id="BasketStatus"></span>
+                            </a>
+                            <a class="dropdown-item" href="http://localhost/university_refectory/user/logout">ÇIKIŞ</a>
+
+
+                        </div>
+
+                    </li>
+                
+
+                <form method='get' action='' id='form_lang' >
+                    <select name='lang' onchange='changeLang();' class="mt-2 multilanguage">
+                        <option value='tr'  >TR</option>
+                        <option value='en'  >EN</option>
+                    </select>
+                </form>
+            </ul>
+        </div>
+
+
+    </nav>
+</header>
+
+   
+
+
+<div style="margin-top: 120px">
+    <div class="content">
+
+
+        <div class="header" style="text-align: center;">
+            <h3>REZERVASYON</h3>
+            <h4>Öğle/Akşam Yemeği</h4>
+
+
+        </div>
+
+        <!--Table 4--->
+<form id="MenuSepeteEkleForm">
+        <div class="row">
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">03-08-2020                                <input value="+" type="button" class="myBtnClass1"
+                                       data-value="1"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Mantar Çorba1<span class="ml-3 badge badge-info">391 kcal</span></li>
+                            <li class="list-group-item">Çoban Kavurma1<span class="ml-3 badge badge-info">6011 kcal</span></li>
+                            <li class="list-group-item">Makarna1<span class="ml-3 badge badge-info">1311 kcal</span></li>
+                            <li class="list-group-item">Ayran1<span class="ml-3 badge badge-info">1141 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">8854 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place1">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">04-08-2020                                <input value="+" type="button" class="myBtnClass2"
+                                       data-value="2"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Sebze Çorba<span class="ml-3 badge badge-info">124 kcal</span></li>
+                            <li class="list-group-item">Etli Nohut<span class="ml-3 badge badge-info">285 kcal</span></li>
+                            <li class="list-group-item">Sade Pilav<span class="ml-3 badge badge-info">118 kcal</span></li>
+                            <li class="list-group-item">Yoğurt<span class="ml-3 badge badge-info">59 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">586 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place2">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">05-08-2020                                <input value="+" type="button" class="myBtnClass3"
+                                       data-value="3"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Domates Çorba<span class="ml-3 badge badge-info">30 kcal</span></li>
+                            <li class="list-group-item">Mantarlı Et Sote<span class="ml-3 badge badge-info">256 kcal</span></li>
+                            <li class="list-group-item">Erişte<span class="ml-3 badge badge-info">137 kcal</span></li>
+                            <li class="list-group-item">Cacık<span class="ml-3 badge badge-info">128 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">551 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place3">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">06-08-2020                                <input value="+" type="button" class="myBtnClass4"
+                                       data-value="4"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Tavuksuyu Çorba<span class="ml-3 badge badge-info">117 kcal</span></li>
+                            <li class="list-group-item">Yeşil Mercimek<span class="ml-3 badge badge-info">285 kcal</span></li>
+                            <li class="list-group-item">Bulgur Pilavı<span class="ml-3 badge badge-info">149 kcal</span></li>
+                            <li class="list-group-item">Çilek Komposto<span class="ml-3 badge badge-info">46 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">597 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place4">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">07-08-2020                                <input value="+" type="button" class="myBtnClass5"
+                                       data-value="5"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Tutmaç Çorba<span class="ml-3 badge badge-info">195 kcal</span></li>
+                            <li class="list-group-item">Etli Bezelye<span class="ml-3 badge badge-info">201 kcal</span></li>
+                            <li class="list-group-item">Kıymalı Makarna<span class="ml-3 badge badge-info">196 kcal</span></li>
+                            <li class="list-group-item">Şeftali<span class="ml-3 badge badge-info">39 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">631 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place5">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">08-08-2020                                <input value="+" type="button" class="myBtnClass6"
+                                       data-value="6"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Tarhana Çorba<span class="ml-3 badge badge-info">150 kcal</span></li>
+                            <li class="list-group-item">Kıymalı Bezelye<span class="ml-3 badge badge-info">275 kcal</span></li>
+                            <li class="list-group-item">Peynirli Erişte<span class="ml-3 badge badge-info">304 kcal</span></li>
+                            <li class="list-group-item">Tahin Helvası<span class="ml-3 badge badge-info">197 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">926 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place6">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">09-08-2020                                <input value="+" type="button" class="myBtnClass7"
+                                       data-value="7"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Domates Çorba<span class="ml-3 badge badge-info">30 kcal</span></li>
+                            <li class="list-group-item">Mantarlı Et Sote<span class="ml-3 badge badge-info">169 kcal</span></li>
+                            <li class="list-group-item">Erişte<span class="ml-3 badge badge-info">135 kcal</span></li>
+                            <li class="list-group-item">Cacık<span class="ml-3 badge badge-info">128 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">462 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place7">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">10-08-2020                                <input value="+" type="button" class="myBtnClass8"
+                                       data-value="8"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Tavuksuyu Çorba<span class="ml-3 badge badge-info">117 kcal</span></li>
+                            <li class="list-group-item">Yeşil Mercimek<span class="ml-3 badge badge-info">285 kcal</span></li>
+                            <li class="list-group-item">Bulgur Pilavı<span class="ml-3 badge badge-info">149 kcal</span></li>
+                            <li class="list-group-item">Çilek Komposto<span class="ml-3 badge badge-info">46 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">597 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place8">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">11-08-2020                                <input value="+" type="button" class="myBtnClass9"
+                                       data-value="9"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Tutmaç Çorba<span class="ml-3 badge badge-info">195 kcal</span></li>
+                            <li class="list-group-item">Etli Bezelye<span class="ml-3 badge badge-info">201 kcal</span></li>
+                            <li class="list-group-item">Kıymalı Makarna<span class="ml-3 badge badge-info">196 kcal</span></li>
+                            <li class="list-group-item">Şeftali<span class="ml-3 badge badge-info">39 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">631 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place9">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">12-08-2020                                <input value="+" type="button" class="myBtnClass10"
+                                       data-value="10"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Tarhana Çorba<span class="ml-3 badge badge-info">150 kcal</span></li>
+                            <li class="list-group-item">Kıymalı Bezelye<span class="ml-3 badge badge-info">275 kcal</span></li>
+                            <li class="list-group-item">Peynirli Erişte<span class="ml-3 badge badge-info">304 kcal</span></li>
+                            <li class="list-group-item">Tahin Helvası<span class="ml-3 badge badge-info">197 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">926 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place10">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">13-08-2020                                <input value="+" type="button" class="myBtnClass11"
+                                       data-value="11"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Mantar Çorba<span class="ml-3 badge badge-info">39 kcal</span></li>
+                            <li class="list-group-item">Çoban Kavurma<span class="ml-3 badge badge-info">601 kcal</span></li>
+                            <li class="list-group-item">Makarna<span class="ml-3 badge badge-info">131 kcal</span></li>
+                            <li class="list-group-item">Ayran<span class="ml-3 badge badge-info">114 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">885 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place11">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">14-08-2020                                <input value="+" type="button" class="myBtnClass12"
+                                       data-value="12"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Mantar Çorba<span class="ml-3 badge badge-info">39 kcal</span></li>
+                            <li class="list-group-item">Çoban Kavurma<span class="ml-3 badge badge-info">601 kcal</span></li>
+                            <li class="list-group-item">Makarna<span class="ml-3 badge badge-info">131 kcal</span></li>
+                            <li class="list-group-item">Ayran<span class="ml-3 badge badge-info">114 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">885 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place12">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">15-08-2020                                <input value="+" type="button" class="myBtnClass13"
+                                       data-value="13"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Sebze Çorba<span class="ml-3 badge badge-info">124 kcal</span></li>
+                            <li class="list-group-item">Etli Nohut<span class="ml-3 badge badge-info">285 kcal</span></li>
+                            <li class="list-group-item">Sade Pilav<span class="ml-3 badge badge-info">118 kcal</span></li>
+                            <li class="list-group-item">Yoğurt<span class="ml-3 badge badge-info">59 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">586 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place13">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">16-08-2020                                <input value="+" type="button" class="myBtnClass14"
+                                       data-value="14"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Domates Çorba<span class="ml-3 badge badge-info">30 kcal</span></li>
+                            <li class="list-group-item">Mantarlı Et Sote<span class="ml-3 badge badge-info">256 kcal</span></li>
+                            <li class="list-group-item">Erişte<span class="ml-3 badge badge-info">135 kcal</span></li>
+                            <li class="list-group-item">Cacık<span class="ml-3 badge badge-info">128 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">549 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place14">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">17-08-2020                                <input value="+" type="button" class="myBtnClass15"
+                                       data-value="15"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Tavuksuyu Çorba<span class="ml-3 badge badge-info">117 kcal</span></li>
+                            <li class="list-group-item">Yeşil Mercimek<span class="ml-3 badge badge-info">285 kcal</span></li>
+                            <li class="list-group-item">Bulgur Pilavı<span class="ml-3 badge badge-info">149 kcal</span></li>
+                            <li class="list-group-item">Çilek Komposto<span class="ml-3 badge badge-info">46 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">597 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place15">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">18-08-2020                                <input value="+" type="button" class="myBtnClass16"
+                                       data-value="16"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Mantar Çorba<span class="ml-3 badge badge-info">39 kcal</span></li>
+                            <li class="list-group-item">Çoban Kavurma<span class="ml-3 badge badge-info">601 kcal</span></li>
+                            <li class="list-group-item">Makarna<span class="ml-3 badge badge-info">131 kcal</span></li>
+                            <li class="list-group-item">Ayran<span class="ml-3 badge badge-info">114 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">885 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place16">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">19-08-2020                                <input value="+" type="button" class="myBtnClass17"
+                                       data-value="17"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Sebze Çorba<span class="ml-3 badge badge-info">124 kcal</span></li>
+                            <li class="list-group-item">Etli Nohut<span class="ml-3 badge badge-info">285 kcal</span></li>
+                            <li class="list-group-item">Sade Pilav<span class="ml-3 badge badge-info">118 kcal</span></li>
+                            <li class="list-group-item">Yoğurt<span class="ml-3 badge badge-info">59 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">586 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place17">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">20-08-2020                                <input value="+" type="button" class="myBtnClass18"
+                                       data-value="18"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Domates Çorba<span class="ml-3 badge badge-info">30 kcal</span></li>
+                            <li class="list-group-item">Mantarlı Et Sote<span class="ml-3 badge badge-info">169 kcal</span></li>
+                            <li class="list-group-item">Erişte<span class="ml-3 badge badge-info">135 kcal</span></li>
+                            <li class="list-group-item">Cacık<span class="ml-3 badge badge-info">128 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">462 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place18">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">21-08-2020                                <input value="+" type="button" class="myBtnClass19"
+                                       data-value="19"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Tavuksuyu Çorba<span class="ml-3 badge badge-info">117 kcal</span></li>
+                            <li class="list-group-item">Yeşil Mercimek<span class="ml-3 badge badge-info">285 kcal</span></li>
+                            <li class="list-group-item">Bulgur Pilavı<span class="ml-3 badge badge-info">149 kcal</span></li>
+                            <li class="list-group-item">Çilek Komposto<span class="ml-3 badge badge-info">46 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">597 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place19">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">22-08-2020                                <input value="+" type="button" class="myBtnClass20"
+                                       data-value="20"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Tutmaç Çorba<span class="ml-3 badge badge-info">195 kcal</span></li>
+                            <li class="list-group-item">Etli Bezelye<span class="ml-3 badge badge-info">201 kcal</span></li>
+                            <li class="list-group-item">Kıymalı Makarna<span class="ml-3 badge badge-info">196 kcal</span></li>
+                            <li class="list-group-item">Şeftali<span class="ml-3 badge badge-info">39 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">631 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place20">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">23-08-2020                                <input value="+" type="button" class="myBtnClass21"
+                                       data-value="21"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Tutmaç Çorba<span class="ml-3 badge badge-info">195 kcal</span></li>
+                            <li class="list-group-item">Etli Bezelye<span class="ml-3 badge badge-info">201 kcal</span></li>
+                            <li class="list-group-item">Kıymalı Makarna<span class="ml-3 badge badge-info">196 kcal</span></li>
+                            <li class="list-group-item">Şeftali<span class="ml-3 badge badge-info">39 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">631 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place21">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-3 mt-3">
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">24-08-2020                                <input value="+" type="button" class="myBtnClass23"
+                                       data-value="23"  style="float: right; width: 40px; height: 40px">
+                            </h5>
+
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Mercimek Çorba<span class="ml-3 badge badge-info">112 kcal</span></li>
+                            <li class="list-group-item">Sebzeli Kebap<span class="ml-3 badge badge-info">250 kcal</span></li>
+                            <li class="list-group-item">Şeh.Pirin. Pilavı<span class="ml-3 badge badge-info">350 kcal</span></li>
+                            <li class="list-group-item">Ayran<span class="ml-3 badge badge-info">50 kcal</span></li>
+                            <li class="list-group-item">Toplam Kalori : <span class="ml-3 badge badge-info">762 kcal</span></li>
+                        </ul>
+                        <div class="card-body">
+                            <select class="custom-select my-1 mr-sm-2" id="r_place23">
+                                <option selected disabled>Yemekhane Seçiniz</option>
+                                                                    <option value="1">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Öğrenci Yemekhanesi</option>
+                                                                    <option value="2">TNKÜ Değirmealtı Yerleşkesi Öğrenci Sosyal Yaşam Merkezi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="3">TNKÜ Çorlu Mühendislik Fakültesi Öğrenci Yemekhanesi</option>
+                                                                    <option value="4">TNKÜ Çorlu Mühendislik Fakültesi Akademik ve İdari Personel Yemekhanesi</option>
+                                                                    <option value="5">TNKÜ Çorlu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="6">TNKÜ Şarköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="7">TNKÜ Saray MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="8">TNKÜ Çerkezköy MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="9">TNKÜ Muratlı MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="10">TNKÜ Malkara MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="11">TNKÜ Marmaraereğlisi MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                                    <option value="12">TNKÜ Hayrabolu MYO Öğrenci,Akademik,İdari Personel Yemekhanesi</option>
+                                                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            
+        </div>
+</form>
+            </div>
+
+
+
+    <footer>
+    <div class="mt-5 pt-5 pb-5  footer">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-12 col-xs-12 footer-logo mb-5">
+                    <img src="http://localhost/university_refectory/views/assets/img/logo-footer.png" width="271px" height="70px">
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-xs-6 location">
+                    <h4 class="mt-lg-0 mt-sm-4">Yemekhane İdare Müdürlüğü</h4>
+                    <hr>
+                    <p><i class="fa fa-map-marker mr-3"></i>Adres : Değirmenaltı, 59030 Tekirdağ Merkez/Tekirdağ                    </p>
+                    <p><i class="fa fa-envelope-o mr-3"></i>E-Posta : yemekhane@nku.edu.tr</p>
+                    <p><i class="fa fa-phone mr-3"></i>Telefon : +90 222 335 05 80 / 1575</p>
+                    <p><i class="fa fa-print mr-3"></i>Faks : +90 222 335 80 81</p>
+                </div>
+
+
+                <div class="col-lg-6 col-xs-6 footer-img">
+                    <img src="http://localhost/university_refectory/views/assets/img/nku-giris.jpg">
+                </div>
+
+            </div>
+            <!-- Social buttons -->
+            <div class="mt-5">
+                <ul class="list-unstyled list-inline text-center">
+                    <li class="list-inline-item">
+                        <a class="btn-floating mx-1" href="https://www.facebook.com/" target="_blank">
+                            <ion-icon name="logo-facebook" class="social-media-icon logo-facebook"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="btn-floating mx-1" href="https://twitter.com/" target="_blank">
+                            <ion-icon name="logo-twitter" class="social-media-icon logo-twitter"></ion-icon>                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="btn-floating mx-1" href="https://www.apple.com/tr/" target="_blank">
+                            <ion-icon name="logo-apple" class="social-media-icon logo-apple"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="btn-floating btn-li mx-1" href="https://www.apple.com/tr/"
+                           target="_blank">
+                            <ion-icon name="logo-android" class="social-media-icon logo-android"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="btn-floating btn-dribbble mx-1" href="https://www.instagram.com/?hl=en"
+                           target="_blank">
+                            <ion-icon name="logo-instagram" class="social-media-icon logo-instagram"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="btn-floating btn-dribbble mx-1" href="https://www.youtube.com/"
+                           target="_blank">
+                            <ion-icon name="logo-youtube" class="social-media-icon logo-youtube"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Social buttons -->
+
+
+        </div>
+
+    </div>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">&copy;
+        <script>document.write(new Date().getFullYear());</script>
+        Telif Hakkı:
+        <a href="http://www.nku.edu.tr/" target="_blank">Namık Kemal Üniversitesi</a> - Tüm Hakları Saklıdır.
+    </div>
+    <!-- Copyright -->
+
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="http://localhost/university_refectory/views/assets/js/jquery.min.js"></script>
+
+<script>
+
+    //Basket Control
+    $('#BasketStatus').load("http://localhost/university_refectory/GeneralTask/BasketControl");
+
+
+    //Add Basket
+    $(document).ready(function () {
+        //Basket Add
+        $('#MenuSepeteEkleForm input[type="button"]').click(function () {
+
+            var id = $(this).attr('data-value');
+            var r_place = $('#r_place' + id + ' option:selected').val();
+            //alert(r_place);
+
+            $.post("http://localhost/university_refectory/GeneralTask/Add", {"menu_id": id, "r_place": r_place}, function () {
+                $('#BasketStatus').load("http://localhost/university_refectory/GeneralTask/BasketControl");
+                $('.myBtnClass' + id).css("background-color","#D4EDDA");
+            });
+
+
+        });
+
+
+    });
+
+    //Basket Delete
+    function MenuDelete(id) {
+        $.post("http://localhost/university_refectory/GeneralTask/Delete", {"menu_id": id}, function () {
+            window.location.reload();
+        });
+
+        //alert(value);
+    }
+
+
+    //Update Basket
+    $('#UpdateMenuForm input[type="button"]').click(function () {
+        var id = $(this).attr('data-value');
+        var r_place = $('#basketR_place' + id + ' option:selected').val();
+
+        $.post("http://localhost/university_refectory/GeneralTask/Update", {"menu_id": id, "r_place": r_place}, function () {
+            window.location.reload();
+        });
+        //alert(r_place);
+    })
+
+
+</script>
+<script type="text/javascript" src="http://localhost/university_refectory/views/assets/js/slick.min.js"></script>
+
+<script>
+
+    $(function () {
+        $('.banner_slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: false,
+            fade: true,
+            cssEase: 'linear',
+            asNavFor: '.thumbnail_slider'
+
+
+        })
+
+        $('.thumbnail_slider').slick({
+            slidesToShow: 7,
+            slidesToScroll: 1,
+            asNavFor: '.banner_slider',
+            dots: false,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: false,
+            centerMode: true,
+            focusOnSelect: true
+        });
+    })
+</script>
+
+<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+<script>
+    function changeLang(){
+        document.getElementById('form_lang').submit();
+    }
+</script>
+
+
+</html>
+

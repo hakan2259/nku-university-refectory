@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yemekhane | Namık Kemal Üniversitesi</title>
+
+    <meta name="description" content="Namık Kemal Üniversitesi Yemekhane Otomasyonu. Üniversitemizin Personel veya Öğrencilerin Yemek Rezervasyon Yapabilecekleri Sistemdir.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      "/>
+    <meta name="keywords" content="                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                namık kemal, üniversitesi, tekirdağ, yemekhane, refectory, namık kemal university, yemek                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               "/>
+    <meta name="author" content="Hakan SANDAL"/>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="http://localhost/university_refectory/views/assets/css/style.php" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="http://localhost/university_refectory/views/assets/css/slick.css"/>
+
+
+    <link rel="icon" href="http://localhost/university_refectory/views/assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+    <style>
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+    </style>
+
+
+
+
+
+</head>
+
+<body>
+
+
+<header>
+
+    <nav class="navbar navbar-color fixed-top navbar-expand-lg text-white">
+
+
+        <a href="http://localhost/university_refectory" class="navbar-brand"><span><img
+                        src="http://localhost/university_refectory/views/assets/img/Namık Kemal Üniversitesi.png" width="250px" height="50px"></span><span
+                    class="refectory-text">REFECTORY</span></a>
+        <div>
+            <span class="btn-refectory-top">REFECTORY</span>
+            <button type="button" class="navbar-toggler btn-icon" data-toggle="collapse" data-target="#navbar-nku"
+                    aria-controls="navbar-nku">
+
+                <div><img src="http://localhost/university_refectory/views/assets/img/NKULogoBeyaz.png" class="btn-icon-img"></div>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-nku">
+            <ul class="navbar-nav ml-auto">
+
+
+                                    <li>
+
+                        <a href="http://localhost/university_refectory/user/login" class="nav-link text-white">LOGIN</a>
+
+                    </li>
+
+                
+
+                <li class="nav-item dropdown" style="cursor:pointer">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <span>EN</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-default"
+                         aria-labelledby="navbarDropdownMenuLink-333">
+                        <a class="dropdown-item" href="#">Türkçe</a>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+    </nav>
+</header>
+
+   
+
+
+
+<section>
+        <div class="jumbotron text-center" style="background-image: url(http://localhost/university_refectory/views/assets/img/nkumanset.jpg);">
+
+            <div class="overflow"></div>
+            <div class="intro">
+
+                <h1>Namık Kemal Üniversitesi Yemekhanesine Hoşgeldiniz</h1>
+                <h2>Rezervesyon yapmak için lütfen giriş yapınız</h2>
+                <a href="http://localhost/university_refectory/user/login" type="submit" class="btn-login">Giriş</a>
+            </div>
+        </div>
+    </section>
+    <main>
+        <div class="video">
+            <div class="container" style="text-align: center;">
+                <h2 class="video-header">Otomasyon Kullanım Videosu</h2>
+                <iframe frameborder="0" height="540" src="https://www.youtube.com/embed/wPz_cpAjMXE"
+                    width="100%"></iframe>
+            </div>
+        </div>
+        <div class="refectory-info">
+            <div class="container" style="text-align: center;">
+                <h2 class="video-header">Yemekhane Otomasyonu İle İlgili Önemli Bilgiler</h2>
+
+               
+                               <div class="card mt-3">
+                    <div class="card-body">
+                       <p style="text-align: left;"><font color="#212529" face="Tahoma"><span style="font-size: 16px;">★&nbsp;</span></font><font color="#212529" face="Tahoma" style=""><span style="font-size: 16px;">İnternet tarayıcınız üzerinden </span></font><a href="https://yemekhane.nku.edu.tr" style="">https://yemekhane.nku.edu.tr</a><font color="#212529" face="Tahoma" style=""><span style="font-size: 16px;">&nbsp;adresine giriş yapınız.Hangi gün hangi öğün ve hangi yemekhanede yemek yiyeceğinizi seçerek rezervasyonunuzu kaydediniz.Kaydedilen rezervasyonunuzu satışa dönüşebilmesi için ödemesini online olarak (banka kartı veya kredi kartı ile) veya yemekhane gişeleri aracılığıyla (nakit veya banka kartı veya kredi kartı ile) yapabilirsiniz.</span></font></p>                    </div>
+                </div>
+                         <div class="card mt-3">
+                    <div class="card-body">
+                       <p><font color="#212529" face="Tahoma"><span style="font-size: 16px;">★</span></font><span style="color: rgb(33, 37, 41); font-family: Tahoma; font-size: 16px;">&nbsp;</span><span style="color: rgb(34, 34, 34); font-size: 16px;"><font face="Tahoma">Gün dönümü her gün saat 17:30 dan itibaren gerçekleşir. Örneğin, Cuma günü önümüzdeki haftanın günleri için rezervasyon yapar ve ödemesini 17:30 dan sonra gerçekleştirirseniz gün dönümü olduğundan dolayı artık içinde bulunduğunuz gün Cumartesi olarak kabul edilir ve önümüzdeki haftanın Pazartesi ve Salı günlerini toptan fiyat üzerinden satın alamazsınız. Alamadığınız bu günleri kendi gününde günlük yemek fiyatı üzerinden satın alabilirsiniz.</font></span></p>                    </div>
+                </div>
+                         <div class="card mt-3">
+                    <div class="card-body">
+                       <p></p><p><font color="#212529" face="Tahoma"><span style="font-size: 16px;">★</span></font><span style="color: rgb(33, 37, 41); font-family: Tahoma; font-size: 16px;">&nbsp;R</span><span style="color: rgb(34, 34, 34); font-size: 16px;"><font face="Tahoma">ezervasyon kuralları gereği içinde bulunduğunuz günden 2 gün sonrası için rezervasyon yapabilir ve yemek satın alabilirsiniz. Önceden satın almadığınız ve içinde bulunduğunuz gün yemek yemek isterseniz günlük yemek satın alabilirsiniz. Rezervasyon kurallarının uygulanmasındaki temel amaç planlamanın sağlıklı bir şekilde yapılabilmesi ve yemek israfının önüne geçilebilmesi içindir.</font></span></p><p></p><h4><span style="color: rgb(34, 34, 34); font-size: 16px;"><font face="Tahoma"><b>Örnek Tablo:</b></font></span></h4><p></p><table class="table table-bordered"><tbody><tr><td><p><b><font face="Tahoma">İçinde bulunduğunuz gün</font></b></p></td><td><p><font face="Tahoma" style="">Rezervesyon yapıp satın alabileceğiniz günler</font></p></td></tr><tr><td><p><b>Pazartesi</b></p></td><td><p style="text-align: left;"><font face="Tahoma">Çarşamba-Perşembe-Cuma ve ertesi haftanın tüm günleri</font></p></td></tr><tr><td><p><b>Salı</b></p></td><td><p><span style="color: rgb(33, 37, 41); font-size: 16px; text-align: center;"><font face="Verdana">Perşembe-Cuma ve ertesi haftanın tüm günleri</font></span></p></td></tr><tr><td><p><font face="Tahoma"><b>Çarşamba</b></font></p></td><td><p><font face="Tahoma"><span style="color: rgb(33, 37, 41); font-size: 16px; text-align: center;">Cuma ve ertesi haftanın tüm günleri</span></font></p></td></tr><tr><td><p><font face="Tahoma"><b>Perşembe</b></font></p></td><td><p><font face="Tahoma"><span style="color: rgb(33, 37, 41); font-size: 16px; text-align: center;">Ertesi haftanın tüm günleri</span></font></p></td></tr><tr><td><p><font face="Tahoma"><b>Cuma</b></font></p></td><td><p><font face="Tahoma"><span style="color: rgb(33, 37, 41); font-size: 16px; text-align: center;">Ertesi haftanın tüm günleri (Saat 17:30’a kadar)</span></font></p></td></tr><tr><td><p><font face="Tahoma"><b>Cumartesi</b></font></p></td><td><p><font face="Tahoma"><span style="color: rgb(33, 37, 41); font-size: 16px; text-align: center;">Ertesi haftanın Çarşamba-Perşembe-Cuma günleri</span></font></p></td></tr><tr><td><p><font face="Tahoma"><b>Pazar</b></font></p></td><td><p><font face="Tahoma"><span style="color: rgb(33, 37, 41); font-size: 16px; text-align: center;">Ertesi haftanın Çarşamba-Perşembe-Cuma günleri</span></font></p></td></tr></tbody></table>                    </div>
+                </div>
+                         <div class="card mt-3">
+                    <div class="card-body">
+                       <font color="#212529" face="Tahoma"><span style="font-size: 16px;">★&nbsp;</span></font><span style="color: rgb(34, 34, 34); font-family: Ubuntu, sans-serif; font-size: 16px;">Ödemesini yaptığınız öğünler için satın alma aşamasında seçtiğiniz yemekhane içerisinde bulunan turnikeye öğrenci kartınızı veya personel kartınızı okutarak geçiş yapabilirsiniz.</span>                    </div>
+                </div>
+                         <div class="card mt-3">
+                    <div class="card-body">
+                       <p><font color="#212529" face="Tahoma"><span style="font-size: 16px;">★</span></font><span style="color: rgb(33, 37, 41); font-family: Tahoma; font-size: 16px;">&nbsp;</span><span style="color: rgb(34, 34, 34); font-family: Ubuntu, sans-serif; font-size: 16px;">Öğrenci kartınızı veya personel kartınızı unutmanız veya teknik nedenlerden dolayı kartınızın çalışmadığı durumlarda yemekhane gişelerine giderek yemek hakkınızın tek kullanımlık barkodlu fişe aktarılmasını talep edebilirsiniz.</span><br></p>                    </div>
+                </div>
+                         <div class="card mt-3">
+                    <div class="card-body">
+                       <p><font color="#212529" face="Tahoma"><span style="font-size: 16px;">★</span></font><span style="color: rgb(33, 37, 41); font-family: Tahoma; font-size: 16px;">&nbsp;</span><span style="color: rgb(34, 34, 34); font-family: Ubuntu, sans-serif; font-size: 16px;">Yemekhanemizin hizmet verdiği öğünler ve öğünlerin saatleri ile hizmetin verildiği yemekhaneler aşağıdaki tabloda belirtilmiştir.</span></p><table class="table table-bordered"><tbody><tr><td><b>Öğün</b></td><td><b>Öğün Saati</b></td><td><b>Hizmetin verildiği yemekhane</b></td></tr><tr><td><b>Kahvaltı</b></td><td><font face="Tahoma"><span style="color: rgb(34, 34, 34);">07:45 - 09:00</span><br></font></td><td><p style="box-sizing: border-box; margin-right: 0px; margin-bottom: 10.5px; margin-left: 0px; color: rgb(34, 34, 34);"><font face="Tahoma">Anadolu Üniversitesi Yunus Emre Kampüsü Merkez Öğrenci Yemekhanesi</font></p><p style="box-sizing: border-box; margin-right: 0px; margin-bottom: 10.5px; margin-left: 0px; color: rgb(34, 34, 34);"><font face="Tahoma">ESTÜ İki Eylül Kampüsü Öğrenci Yemekhanesi</font></p></td></tr><tr><td><font face="Tahoma"><b>Öğle Yemeği</b></font></td><td><font face="Tahoma"><span style="color: rgb(34, 34, 34);">11:30 - 14:00</span><br></font></td><td><p style="box-sizing: border-box; margin-right: 0px; margin-bottom: 10.5px; margin-left: 0px; color: rgb(34, 34, 34);"><font face="Tahoma">Anadolu Üniversitesi Yunus Emre Kampüsü Merkez Öğrenci Yemekhanesi</font></p><p style="box-sizing: border-box; margin-right: 0px; margin-bottom: 10.5px; margin-left: 0px; color: rgb(34, 34, 34);"><font face="Tahoma">Anadolu Üniversitesi Yunus Emre Kampüsü Yeni Öğrenci Yemekhanesi</font></p><p style="box-sizing: border-box; margin-right: 0px; margin-bottom: 10.5px; margin-left: 0px; color: rgb(34, 34, 34);"><font face="Tahoma">Anadolu Üniversitesi Yunus Emre Kampüsü Personel Yemekhanesi</font></p><p style="box-sizing: border-box; margin-right: 0px; margin-bottom: 10.5px; margin-left: 0px; color: rgb(34, 34, 34);"><font face="Tahoma">ESTÜ İki Eylül Kampüsü Öğrenci Yemekhanesi</font></p><p style="box-sizing: border-box; margin-right: 0px; margin-bottom: 10.5px; margin-left: 0px; color: rgb(34, 34, 34);"><font face="Tahoma">ESTÜ Porsuk Kampüsü Öğrenci Yemekhanesi</font></p><p style="box-sizing: border-box; margin-right: 0px; margin-bottom: 10.5px; margin-left: 0px; color: rgb(34, 34, 34);"><font face="Tahoma">ESTÜ İki Eylül Kampüsü Personel Yemekhanesi</font></p></td></tr><tr><td><font face="Tahoma"><b>Akşam Yemeği</b></font></td><td><p style="box-sizing: border-box; margin-right: 0px; margin-bottom: 10.5px; margin-left: 0px; color: rgb(34, 34, 34);"><font face="Tahoma">17:30 - 20:00</font></p><p style="box-sizing: border-box; margin-right: 0px; margin-bottom: 10.5px; margin-left: 0px; color: rgb(34, 34, 34);"><font face="Tahoma">17:30 - 19:00</font></p></td><td><p style="box-sizing: border-box; margin-right: 0px; margin-bottom: 10.5px; margin-left: 0px; color: rgb(34, 34, 34);"><font face="Tahoma">Anadolu Üniversitesi Yunus Emre Kampüsü Merkez Öğrenci Yemekhanesi</font></p><p style="box-sizing: border-box; margin-right: 0px; margin-bottom: 10.5px; margin-left: 0px; color: rgb(34, 34, 34);"><font face="Tahoma">Anadolu Üniversitesi Yunus Emre Kampüsü Yeni Öğrenci Yemekhanesi</font></p></td></tr></tbody></table>                    </div>
+                </div>
+                         <div class="card mt-3">
+                    <div class="card-body">
+                       <p><font color="#212529" face="Tahoma"><span style="font-size: 16px;">★</span></font><span style="color: rgb(33, 37, 41); font-family: Tahoma; font-size: 16px;">&nbsp;</span><span style="color: rgb(34, 34, 34); font-family: Ubuntu, sans-serif; font-size: 16px;">Yemekhanemizde hizmet verilen öğünler üniversitemiz bünyesinde çalışan personellerimiz tarafından hazırlanmaktadır.</span><br></p>                    </div>
+                </div>
+                         <div class="card mt-3">
+                    <div class="card-body">
+                       <p><font color="#212529" face="Tahoma"><span style="font-size: 16px;">★</span></font><span style="color: rgb(33, 37, 41); font-family: Tahoma; font-size: 16px;">&nbsp;</span><span style="color: rgb(34, 34, 34); font-family: Ubuntu, sans-serif; font-size: 16px;">Menüler önceden açıklanmaktadır (Akşam yemeği menüsü hariç) fakat malzeme temini ve teknik aksaklıklardan doğacak sorunlar nedeniyle menüde değişiklik yapılabilir.</span></p><p><font color="#212529" face="Tahoma"><span style="font-size: 16px;">★</span></font><span style="color: rgb(33, 37, 41); font-family: Tahoma; font-size: 16px;">&nbsp;</span><span style="color: rgb(34, 34, 34); font-family: Ubuntu, sans-serif; font-size: 16px;">Menü; gluten içeren tahıllar, süt ve süt ürünleri, yumurta, balık, yer fıstığı, soya fasulyesi, sert kabuklu meyveler, kereviz, hardal, susam vb. alerjen gıdalar ile hazırlanmış yiyecek ve içecek içerebilir.</span><br></p>                    </div>
+                </div>
+                         <div class="card mt-3">
+                    <div class="card-body">
+                       <p><font color="#212529" face="Tahoma"><span style="font-size: 16px;">★</span></font><span style="color: rgb(33, 37, 41); font-family: Tahoma; font-size: 16px;">&nbsp;</span><span style="color: rgb(34, 34, 34); font-family: Ubuntu, sans-serif; font-size: 16px;">Aynı gün ve aynı öğün için normal menü ve vejetaryen menü birlikte satın alınamamaktadır.</span></p><p><font color="#212529" face="Tahoma"><span style="font-size: 16px;">★</span></font><span style="color: rgb(33, 37, 41); font-family: Tahoma; font-size: 16px;">&nbsp;</span><span style="color: rgb(34, 34, 34); font-family: Ubuntu, sans-serif; font-size: 16px;">Satışı yapılan öğünler için ücret iadesi yapılamamaktadır.</span></p><p><font color="#212529" face="Tahoma"><span style="font-size: 16px;">★</span></font><span style="color: rgb(33, 37, 41); font-family: Tahoma; font-size: 16px;">&nbsp;</span><span style="color: rgb(34, 34, 34); font-family: Ubuntu, sans-serif; font-size: 16px;">Yemekhanemiz hafta sonlarında ve resmi tatillerde hizmet vermemektedir. Ara dönem tatilinde ise sadece öğle yemeği hizmeti verilmektedir.<br></span><br></p>                    </div>
+                </div>
+                         <div class="card mt-3">
+                    <div class="card-body">
+                       <p><font color="#212529" face="Tahoma"><span style="font-size: 16px;">★</span></font><span style="color: rgb(33, 37, 41); font-family: Tahoma; font-size: 16px;">&nbsp;</span><span style="color: rgb(34, 34, 34); font-family: Ubuntu, sans-serif; font-size: 16px;">Vejetaryen olan öğrencilerimiz için öğle ve akşam öğünlerinde normal menünün yanında vejetaryen menü de çıkarılmaktadır.</span></p><p><font color="#212529" face="Tahoma"><span style="font-size: 16px;">★</span></font><span style="color: rgb(33, 37, 41); font-family: Tahoma; font-size: 16px;">&nbsp;</span><span style="color: rgb(34, 34, 34); font-family: Ubuntu, sans-serif; font-size: 16px;">Çölyak hastalığı bulunan öğrencilerimiz ise yemekhane müdürlüğüne başvuruda bulunarak kendilerine özel çıkarılan menüden yararlanabilirler.<br></span><br></p>                    </div>
+                </div>
+                   
+
+          
+
+
+        <div class="slider_wrap mt-5">
+            <div class="banner_slider">
+                            <img src="http://localhost/university_refectory/views/assets/img/slider/1.jpg" height="1000px" width="700px">
+               
+                       <img src="http://localhost/university_refectory/views/assets/img/slider/2.jpg" height="1000px" width="700px">
+               
+                       <img src="http://localhost/university_refectory/views/assets/img/slider/3.jpg" height="1000px" width="700px">
+               
+                       <img src="http://localhost/university_refectory/views/assets/img/slider/4.jpg" height="1000px" width="700px">
+               
+                       <img src="http://localhost/university_refectory/views/assets/img/slider/5.jpg" height="1000px" width="700px">
+               
+                       <img src="http://localhost/university_refectory/views/assets/img/slider/6.jpg" height="1000px" width="700px">
+               
+                       <img src="http://localhost/university_refectory/views/assets/img/slider/7.jpg" height="1000px" width="700px">
+               
+                       <img src="http://localhost/university_refectory/views/assets/img/slider/8.jpg" height="1000px" width="700px">
+               
+                       <img src="http://localhost/university_refectory/views/assets/img/slider/9.png" height="1000px" width="700px">
+               
+                       <img src="http://localhost/university_refectory/views/assets/img/slider/10.jpg" height="1000px" width="700px">
+               
+                       <img src="http://localhost/university_refectory/views/assets/img/slider/11.jpg" height="1000px" width="700px">
+               
+                   </div>
+
+
+            <div class="thumbnail_slider_area mt-3">
+                <div class="container">
+                    <div class="row thumbnail_slider">
+                                            <img src="http://localhost/university_refectory/views/assets/img/slider/1.jpg" alt="">
+                        <img src="http://localhost/university_refectory/views/assets/img/slider/2.jpg" alt="">
+                        <img src="http://localhost/university_refectory/views/assets/img/slider/3.jpg" alt="">
+                        <img src="http://localhost/university_refectory/views/assets/img/slider/4.jpg" alt="">
+                        <img src="http://localhost/university_refectory/views/assets/img/slider/5.jpg" alt="">
+                        <img src="http://localhost/university_refectory/views/assets/img/slider/6.jpg" alt="">
+                        <img src="http://localhost/university_refectory/views/assets/img/slider/7.jpg" alt="">
+                        <img src="http://localhost/university_refectory/views/assets/img/slider/8.jpg" alt="">
+                        <img src="http://localhost/university_refectory/views/assets/img/slider/9.png" alt="">
+                        <img src="http://localhost/university_refectory/views/assets/img/slider/10.jpg" alt="">
+                        <img src="http://localhost/university_refectory/views/assets/img/slider/11.jpg" alt="">
+                     
+
+                     
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+    </main>
+
+
+<footer>
+    <div class="mt-5 pt-5 pb-5  footer">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-12 col-xs-12 footer-logo mb-5">
+                    <img src="http://localhost/university_refectory/views/assets/img/logo-footer.png" width="271px" height="70px">
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-xs-6 location">
+                    <h4 class="mt-lg-0 mt-sm-4">Yemekhane İdare Müdürlüğü</h4>
+                    <hr>
+                    <p><i class="fa fa-map-marker mr-3"></i>Adres : Değirmenaltı, 59030 Tekirdağ Merkez/Tekirdağ                    </p>
+                    <p><i class="fa fa-envelope-o mr-3"></i>Email: yemekhane@nku.edu.tr</p>
+                    <p><i class="fa fa-phone mr-3"></i>Telefon: +90 222 335 05 80 / 1575</p>
+                    <p><i class="fa fa-print mr-3"></i>Faks: +90 222 335 80 81</p>
+                </div>
+
+
+                <div class="col-lg-6 col-xs-6 footer-img">
+                    <img src="http://localhost/university_refectory/views/assets/img/nku-giris.jpg">
+                </div>
+
+            </div>
+            <!-- Social buttons -->
+            <div class="mt-5">
+                <ul class="list-unstyled list-inline text-center">
+                    <li class="list-inline-item">
+                        <a class="btn-floating mx-1" href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook social-media-icon"> </i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="btn-floating mx-1" href="https://twitter.com/" target="_blank">
+                            <i class="fa fa-twitter social-media-icon"> </i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="btn-floating mx-1" href="https://www.apple.com/tr/" target="_blank">
+                            <i class="fa fa-apple social-media-icon"> </i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="btn-floating btn-li mx-1" href="https://www.apple.com/tr/"
+                           target="_blank">
+                            <i class="fa fa-android social-media-icon"> </i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="btn-floating btn-dribbble mx-1" href="https://www.instagram.com/?hl=en"
+                           target="_blank">
+                            <i class="fa fa-instagram social-media-icon"> </i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="btn-floating btn-dribbble mx-1" href="https://www.youtube.com/"
+                           target="_blank">
+                            <i class="fa fa-youtube social-media-icon"> </i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Social buttons -->
+
+
+        </div>
+
+    </div>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">&copy;
+        <script>document.write(new Date().getFullYear());</script>
+        Copyright:
+        <a href="http://www.nku.edu.tr/" target="_blank">Namık Kemal Üniversitesi</a> - Tüm hakları saklıdır.
+    </div>
+    <!-- Copyright -->
+
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="http://localhost/university_refectory/views/assets/js/jquery.min.js"></script>
+
+<script>
+
+    //Basket Control
+    $('#BasketStatus').load("http://localhost/university_refectory/GeneralTask/BasketControl");
+
+
+    //Add Basket
+    $(document).ready(function () {
+        //Basket Add
+        $('#MenuSepeteEkleForm input[type="button"]').click(function () {
+
+            var id = $(this).attr('data-value');
+            var r_place = $('#r_place' + id + ' option:selected').val();
+            //alert(r_place);
+
+            $.post("http://localhost/university_refectory/GeneralTask/Add", {"menu_id": id, "r_place": r_place}, function () {
+                $('#BasketStatus').load("http://localhost/university_refectory/GeneralTask/BasketControl");
+                $('.myBtnClass' + id).css("background-color","#D4EDDA");
+            });
+
+
+        });
+
+
+    });
+
+    //Basket Delete
+    function MenuDelete(id) {
+        $.post("http://localhost/university_refectory/GeneralTask/Delete", {"menu_id": id}, function () {
+            window.location.reload();
+        });
+
+        //alert(value);
+    }
+
+
+    //Update Basket
+    $('#UpdateMenuForm input[type="button"]').click(function () {
+        var id = $(this).attr('data-value');
+        var r_place = $('#basketR_place' + id + ' option:selected').val();
+
+        $.post("http://localhost/university_refectory/GeneralTask/Update", {"menu_id": id, "r_place": r_place}, function () {
+            window.location.reload();
+        });
+        //alert(r_place);
+    })
+
+
+</script>
+<script type="text/javascript" src="http://localhost/university_refectory/views/assets/js/slick.min.js"></script>
+
+<script>
+
+    $(function () {
+        $('.banner_slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: false,
+            fade: true,
+            cssEase: 'linear',
+            asNavFor: '.thumbnail_slider'
+
+
+        })
+
+        $('.thumbnail_slider').slick({
+            slidesToShow: 7,
+            slidesToScroll: 1,
+            asNavFor: '.banner_slider',
+            dots: false,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: false,
+            centerMode: true,
+            focusOnSelect: true
+        });
+    })
+</script>
+
+
+</body>
+
+</html>
+
