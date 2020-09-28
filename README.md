@@ -68,18 +68,25 @@ https://www.docker.com/get-started
 Dockerfile : Kullanacağımız docker containerlar için projeye uygun uzantıları(extensions) tanımlamamızı ve kurmamızı sağlar.
 Örnek: Projedeki Dockerfile dosyası 
 
+https://github.com/hakan2259/university_refectory/blob/master/Dockerfile
+
 #### Create Docker-Compose
 
 Docker projemiz içerisinde farklı containerların birlikte çalışmasını sağlayan bir yapıdır. Ana projemiz içerisine Docker-compose.yml dosyası oluşturulur ve gerekli tanımlamalar yapılır. Örnek: Projedeki docker-compose.yml dosyası
 
+https://github.com/hakan2259/university_refectory/blob/master/docker-compose.yml
+
 #### Docker proje içindeki ayarların yapılması.
 
 config/database.php =>
+
 •	define ("DB_HOST","db");
 •	define ("DB_NAME","university_refectory");
 •	define ("DB_USER","admin");
 •	define ("DB_PASS","admin");
+
 config/genel.php =>
+
 •	define ("URL","http://localhost");
 •	define ("DBNAME","university_refectory");
 •	define ("DOCUMENT",$_SERVER['DOCUMENT_ROOT']);
