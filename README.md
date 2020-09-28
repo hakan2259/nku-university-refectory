@@ -80,20 +80,20 @@ https://github.com/hakan2259/university_refectory/blob/master/docker-compose.yml
 
 config/database.php =>
 
-•	define ("DB_HOST","db");
-•	define ("DB_NAME","university_refectory");
-•	define ("DB_USER","admin");
-•	define ("DB_PASS","admin");
+- define ("DB_HOST","db");
+- define ("DB_NAME","university_refectory");
+- define ("DB_USER","admin");
+- define ("DB_PASS","admin");
 
 config/genel.php =>
 
-•	define ("URL","http://localhost");
-•	define ("DBNAME","university_refectory");
-•	define ("DOCUMENT",$_SERVER['DOCUMENT_ROOT']);
-•	define ("RESİMYOL",DOCUMENT."/views/assets/img/");
-•	define ("SLİDERRESİMYOL",DOCUMENT."/views/assets/img/slider/");
-•	define ("CACHEPATH",DOCUMENT."/cache/");
-•	define ("BACKUPPATH",DOCUMENT."/backup/");
+- define ("URL","http://localhost");
+- define ("DBNAME","university_refectory");
+- define ("DOCUMENT",$_SERVER['DOCUMENT_ROOT']);
+- define ("RESİMYOL",DOCUMENT."/views/assets/img/");
+- define ("SLİDERRESİMYOL",DOCUMENT."/views/assets/img/slider/");
+- define ("CACHEPATH",DOCUMENT."/cache/");
+- define ("BACKUPPATH",DOCUMENT."/backup/");
 
 #### Containerlar oluşsun ve Proje docker üzerinden ayağı kalksın.
 
