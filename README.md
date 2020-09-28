@@ -51,6 +51,49 @@ https://sandbox-merchant.iyzipay.com/auth adresinden hesap oluşturarak api şif
 `Otomasyon Sisteminin Anlatıldıgı Youtube Video Oynatma Listesi` => [https://www.youtube.com/watch?v=Kg1ukcsZAM0&list=PLS_keznAqvux7840YlIJllT0F9pWa8ZBJ]
 
 
+## Docker
+
+NKU yemekhane projesi için Docker:
+
+https://hub.docker.com/r/hakan22/university_refectory
+
+#### Docker Kurulumu
+
+İşletim sistemine uygun docker aşağıdaki adresten kurulabilir:
+
+https://www.docker.com/get-started
+
+#### Create Dockerfile
+
+Dockerfile : Kullanacağımız docker containerlar için projeye uygun uzantıları(extensions) tanımlamamızı ve kurmamızı sağlar.
+Örnek: Projedeki Dockerfile dosyası 
+
+#### Create Docker-Compose
+
+Docker projemiz içerisinde farklı containerların birlikte çalışmasını sağlayan bir yapıdır. Ana projemiz içerisine Docker-compose.yml dosyası oluşturulur ve gerekli tanımlamalar yapılır. Örnek: Projedeki docker-compose.yml dosyası
+
+#### Docker proje içindeki ayarların yapılması.
+
+config/database.php =>
+•	define ("DB_HOST","db");
+•	define ("DB_NAME","university_refectory");
+•	define ("DB_USER","admin");
+•	define ("DB_PASS","admin");
+config/genel.php =>
+•	define ("URL","http://localhost");
+•	define ("DBNAME","university_refectory");
+•	define ("DOCUMENT",$_SERVER['DOCUMENT_ROOT']);
+•	define ("RESİMYOL",DOCUMENT."/views/assets/img/");
+•	define ("SLİDERRESİMYOL",DOCUMENT."/views/assets/img/slider/");
+•	define ("CACHEPATH",DOCUMENT."/cache/");
+•	define ("BACKUPPATH",DOCUMENT."/backup/");
+
+#### Containerlar oluşsun ve Proje docker üzerinden ayağı kalksın.
+
+Terminale docker-compose up (console bağlanmış bir şekilde çalışır) docker-compose up -d (arka planda çalışır) yazarak çalıştırırsak yml dosyasına uygun olarak containerlarımız oluşur ve arka planda çalışacak şekilde ayağım kalkar.
+
+
+
 
 
 
