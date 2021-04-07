@@ -2,7 +2,7 @@
 
 This project is a cafeteria automation written for Namık Kemal University.
 
-![Image of Namık Kemal Üniversitesi](https://upload.wikimedia.org/wikipedia/tr/3/3d/Tekirda%C4%9F_Nam%C4%B1k_Kemal_%C3%9Cniversitesi_Logosu.png)
+![Image of Namık Kemal Üniversitesi](https://user-images.githubusercontent.com/46871570/113903256-71ed3300-97d9-11eb-8ebe-9a347a5b7870.png)
 
 ## İnstall Guide
 
