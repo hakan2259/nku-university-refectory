@@ -6,24 +6,24 @@ This project is a cafeteria automation written for Namık Kemal University. Made
 
 ## İnstall Guide
 
-Xampp Server Kurulumu => [https://www.apachefriends.org/tr/index.html]
+Xampp Server Setup => [https://www.apachefriends.org/tr/index.html]
 
-Proje Dosyalarını C:\xampp\htdocs içine atıyoruz.
+We drop the project files into C:\xampp\htdocs.
 
-Backup klasörü içindeki sql dosyasını phpMyAdmin veya siz hangi veritabanı tasarım aracı kullanıyorsanız oranın içine aktarım yapıyoruz.
+We import the sql file in the backup folder into phpMyAdmin or whichever database design tool you use.
 
-daha sonra klasörler içinde bazı veritabanı ayarları ve genel ayarlar yapılması gerekiyor.
+Then some database settings and general settings need to be made within the folders.
 
-C:\xampp\htdocs\university_refectory\config gidip database.php dosyasında
+Go to C:\xampp\htdocs\university_refectory\config and in database.php file
 
 - define ("DB_HOST","localhost");
 - define ("DB_NAME","university_refectory");
-- define ("DB_USER","root"); // database kullanıcı adı
-- define ("DB_PASS",""); // database şifre
+- define ("DB_USER","root"); // database username
+- define ("DB_PASS",""); // database password
 
-bilgileri güncelliyoruz.
+we update the information.
 
-2. olarak aynı yol üzerinden genel.php dosyasında
+2. in the general.php file via the same path as
 
 - define ("URL","http://localhost/university_refectory");
 - define ("DBNAME","university_refectory");
@@ -33,52 +33,51 @@ bilgileri güncelliyoruz.
 - define ("CACHEPATH",DOCUMENT."/university_refectory/cache/");
 - define ("BACKUPPATH",DOCUMENT."/university_refectory/backup/");
 
-bilgileri güncelliyoruz.
+we update the information.
 
-tarayıcımızdan localhost/[klasör_ismi] örneğin => http://localhost/university_refectory yazıldığında web sitemiz çalışır hale gelir.
+By typing localhost / [folder name] for example => http://localhost/university_refectory from our browser, our website will be operational.
 
-## Web Api Ayarları Sanal Pos İşlemlerinde Hata Alınmaması İçin
+## Web Api Settings To Avoid Errors In Virtual Pos Operations
 
-C:\xampp\htdocs\university_refectory\config config.php dosyasında
+Go to C:\xampp\htdocs\university_refectory\config and in config.php file
 
 - $options->setApiKey('your-key'); // Api Key
 - $options->setSecretKey('your-secret'); // Api Secret Key
 
-ayarlarını değiştiriniz.
+change the settings.
 
-https://sandbox-merchant.iyzipay.com/auth adresinden hesap oluşturarak api şifresi alabilirsiniz
+You can get api password by creating an account at https://sandbox-merchant.iyzipay.com/auth
 
 
-
-`Otomasyon Sisteminin Anlatıldıgı Youtube Video Oynatma Listesi` => [https://www.youtube.com/watch?v=Kg1ukcsZAM0&list=PLS_keznAqvux7840YlIJllT0F9pWa8ZBJ]
+`Youtube Video Playlist Explaining the Automation System` => [https://www.youtube.com/watch?v=Kg1ukcsZAM0&list=PLS_keznAqvux7840YlIJllT0F9pWa8ZBJ]
 
 
 ## Docker
 
-NKU yemekhane projesi için Docker:
+Docker for NKU refectory project:
 
 https://hub.docker.com/r/hakan22/university_refectory
 
-#### Docker Kurulumu
+#### Docker İnstall
 
-İşletim sistemine uygun docker aşağıdaki adresten kurulabilir:
+Docker suitable for the operating system can be installed from the following address:
 
 https://www.docker.com/get-started
 
 #### Create Dockerfile
 
-Dockerfile : Kullanacağımız docker containerlar için projeye uygun uzantıları(extensions) tanımlamamızı ve kurmamızı sağlar.
-Örnek: Projedeki Dockerfile dosyası 
+Dockerfile : It allows us to define and install extensions suitable for the project for the docker containers we will use.
+Örnek: Dockerfile file in the project
 
 https://github.com/hakan2259/university_refectory/blob/master/Dockerfile
 
 #### Create Docker-Compose
 
-Docker projemiz içerisinde farklı containerların birlikte çalışmasını sağlayan bir yapıdır. Ana projemiz içerisine Docker-compose.yml dosyası oluşturulur ve gerekli tanımlamalar yapılır. Örnek: Projedeki docker-compose.yml dosyası
+It is a structure that allows different containers to work together in our Docker project. Docker-compose.yml file is created in our main project and necessary definitions are made. Example: docker-compose.yml file in the project
 
 https://github.com/hakan2259/university_refectory/blob/master/docker-compose.yml
 
-#### Docker proje içindeki ayarların yapılması.
+#### Making settings in the Docker project.
 
 config/database.php =>
 
@@ -97,9 +96,9 @@ config/genel.php =>
 - define ("CACHEPATH",DOCUMENT."/cache/");
 - define ("BACKUPPATH",DOCUMENT."/backup/");
 
-#### Containerlar oluşsun ve Proje docker üzerinden ayağı kalksın.
+#### Containers should be formed and the project will get up from docker.
 
-Terminale docker-compose up (console bağlanmış bir şekilde çalışır) docker-compose up -d (arka planda çalışır) yazarak çalıştırırsak yml dosyasına uygun olarak containerlarımız oluşur ve arka planda çalışacak şekilde ayağım kalkar.
+If we run it by typing docker-compose up -d (runs in the background) to the terminal, our containers will be created in accordance with the yml file and stand up to run in the background.
 
 
 
