@@ -51,7 +51,7 @@ change the settings.
 You can get api password by creating an account at https://sandbox-merchant.iyzipay.com/auth
 
 
-`Youtube Video Playlist Explaining the Automation System` [![Youtube][3.2]][3] => [https://www.youtube.com/watch?v=Kg1ukcsZAM0&list=PLS_keznAqvux7840YlIJllT0F9pWa8ZBJ]
+`Youtube Video Playlist Explaining the Automation System` => [https://www.youtube.com/watch?v=Kg1ukcsZAM0&list=PLS_keznAqvux7840YlIJllT0F9pWa8ZBJ]
 
 
 ## Docker
