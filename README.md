@@ -2,7 +2,7 @@
 
 This project is a cafeteria automation written for Namık Kemal University. Made as an internship project.
 
-![Image of Namık Kemal Üniversitesi](https://user-images.githubusercontent.com/46871570/113907851-867ffa00-97de-11eb-8336-0c7203add888.gif)
+![Image of Namık Kemal Üniversitesi](https://user-images.githubusercontent.com/46871570/113908277-04440580-97df-11eb-98e5-5588bd1be60b.gif)
 
 ## İnstall Guide
 
