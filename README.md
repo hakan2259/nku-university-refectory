@@ -8,7 +8,7 @@ Made as an internship project.
 
 ## İnstall Guide
 
-Xampp Server Setup => [https://www.apachefriends.org/tr/index.html]
+Xampp Server Setup => (https://www.apachefriends.org/tr/index.html)
 
 We drop the project files into C:\xampp\htdocs.
 
