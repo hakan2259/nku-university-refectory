@@ -1,6 +1,6 @@
 # University Refectory Automation
 
-This project is a cafeteria automation written for Namık Kemal University. Made as an intership project.
+This project is a cafeteria automation written for Namık Kemal University. Made as an internship project.
 
 ![Image of Namık Kemal Üniversitesi](https://user-images.githubusercontent.com/46871570/113903256-71ed3300-97d9-11eb-8ebe-9a347a5b7870.png)
 
