@@ -100,6 +100,12 @@ config/genel.php =>
 
 If we run it by typing docker-compose up -d (runs in the background) to the terminal, our containers will be created in accordance with the yml file and stand up to run in the background.
 
+## Built With
+
+* [Php7.4](https://www.php.net/docs.php) - PHP is a general-purpose scripting language especially suited to web development
+* [Mysql](https://www.mysql.com/) - MySQL is an open-source relational database management system.
+* [Jquery](https://jquery.com/) - jQuery is a JavaScript library designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax.
+
 
 
 
