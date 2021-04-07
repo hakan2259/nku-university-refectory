@@ -1,5 +1,7 @@
 # University Refectory Automation
 
+This project is a cafeteria automation written for Namık Kemal University.
+
 ![Image of Namık Kemal Üniversitesi](https://upload.wikimedia.org/wikipedia/tr/3/3d/Tekirda%C4%9F_Nam%C4%B1k_Kemal_%C3%9Cniversitesi_Logosu.png)
 
 ## İnstall Guide
