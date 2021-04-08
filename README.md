@@ -108,7 +108,7 @@ If we run it by typing docker-compose up -d (runs in the background) to the term
 * [Mysql](https://www.mysql.com/) - MySQL is an open-source relational database management system.
 * [Jquery](https://jquery.com/) - jQuery is a JavaScript library designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax.
 
-## LICENSE
+## License
 
                                  Apache License
                            Version 2.0, January 2004
